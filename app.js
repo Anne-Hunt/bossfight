@@ -4,7 +4,6 @@ const heroes = [
         type: 'dwarf',
         damage: 5,
         health: 100,
-        gold: 0,
         level: 1
     },
     {
@@ -12,7 +11,6 @@ const heroes = [
         type: 'elf',
         damage: 10,
         health: 50,
-        gold: 0,
         level: 1
     }
 ]
@@ -24,5 +22,7 @@ const boss = {
     level: 1,
     money: 50
 }
+
+let gold = 0
 
 
