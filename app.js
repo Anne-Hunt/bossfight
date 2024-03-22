@@ -70,6 +70,7 @@ function attackBoss() {
     for (let i = 0; i < heroes.length; i++) {
         if (heroes[i].active == 'true') {
             stab += heroes[i].damage
+            boss.health -= stab
         }
     }
     console.log('stab', stab)
@@ -94,14 +95,17 @@ function bossDead() {
         boss.level++;
         boss.health = boss.maxHealth;
         killedBosses++;
+        if (killedBosses % 3 == 0) {
+            heroes.forEach(heroes => heroes.level++ && heroes.damage++)
+        }
         drawGame()
     }
 }
 
 function healHero(heroName) {
     if (gold >= 10) {
-        heroes.find(hero => hero.name == heroName)
-        heroName.health += 10;
+        let heroToHeal = heroes.find(hero => hero.name == heroName)
+        heroToHeal.health += 10;
         gold -= 10;
         drawGame()
     } else {
@@ -111,7 +115,7 @@ function healHero(heroName) {
 
 function checkHero() {
     for (let i = 0; i < heroes.length; i++) {
-        if (heroes[i].health <= 0) {
+        if (heroes[i].health <= 0 && heroes[i].active != 'false') {
             window.alert('You lost a member of your party!');
             heroes[i].damage = 0;
             heroes[i].active = 'false';
