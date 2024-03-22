@@ -29,7 +29,7 @@
             <div id="hero" class="col-2">
                 <div class="card border border-light rounded border-5 bg-black text-light p-1"
                     onclick="healHero('Slate Slabrock')">
-                    <h5>Hero 🦸🏻‍♀️</h5>
+                    <h5>Slate Stabrock 🦸🏻‍♀️</h5>
                     <p id="hero-health">Health</p>
                     <p id="gold">Gold</p>
                     <p id="hero-level">Level</p>
@@ -38,10 +38,16 @@
             <div id="sidekick" class="col-2">
                 <div class="card border border-light rounded border-5 bg-black text-light p-1"
                     onclick="healHero('Flint Ironstag')">
-                    <h5>Sidekick 🐒</h5>
+                    <h5>Flint Ironstag 🐒</h5>
                     <p id="sidekick-health">Health</p>
                     <p id="sidekick-level">Level</p>
                 </div>
+            </div>
+            <div id="brock" class="col-2">
+
+            </div>
+            <div id="ronvald" class="col-2">
+
             </div>
         </section>
         <section class="row p-3 justify-content-center">
@@ -60,8 +66,8 @@
                 <div class="row text-light justify-content-between">
                     <div class="col-10">
                         <p>Buy Potion</p>
-                        <p>Get a Friend</p>
-                        <p>Get a Better Friend</p>
+                        <p onclick="getFriend">Get a Friend</p>
+                        <p onclick="getBetterFriend">Get a Better Friend</p>
                     </div>
                     <div class="col-2">
                         <p id="potion">$10</p>

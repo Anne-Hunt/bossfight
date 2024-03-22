@@ -53,6 +53,12 @@ function drawGame() {
     let sidekickHealthElem = document.getElementById('sidekick-health')
     let sidekickLevelElem = document.getElementById('sidekick-level')
     let bossCountElem = document.getElementById('boss-count')
+    let brockElem = document.getElementById('brock')
+    let ronvaldElem = document.getElementById('ronvald')
+    let ronvaldHealthElem = document.getElementById('ronvald-health')
+    let ronvaldLevelElem = document.getElementById('ronvald-level')
+    let brockHealthElem = document.getElementById('brock-health')
+    let brockLevelElem = document.getElementById('brock-level')
 
     goldElem.innerHTML = `<span>Gold: ${gold}</span>`
     heroHealthElem.innerHTML = `<span>Health: ${heroes[0].health}</span>`
@@ -60,6 +66,16 @@ function drawGame() {
     sidekickHealthElem.innerHTML = `<span>Health: ${heroes[1].health}</span>`
     sidekickLevelElem.innerHTML = `<span>Level: ${heroes[1].level}</span>`
     bossCountElem.innerHTML = `<span>Bosses Slain: ${killedBosses}</span>`
+    if (heroes[2].active == 'true') {
+        brockElem.innerHTML = `<div class="card border border-light rounded border-5 bg-black text-light p-1" onclick="healHero('Brock Rockblang')"><h5>Brock Rockblang 🐒</h5><p id="brock-health">Health</p><p id="brock-level">Level</p></div>`;
+        brockHealthElem.innerHTML = `<span>Health: ${heroes[2].health}</span>`;
+        brockLevelElem.innerHTML = `<span>Level: ${heroes[2].level}</span>`
+    }
+    if (heroes[3].active == 'true') {
+        ronvaldElem.innerHTML = `<div class="card border border-light rounded border-5 bg-black text-light p-1" onclick="healHero('Ronvald Stormcracker')"><h5>Ronvald Stormcracker 🐒</h5><p id="ronvald-health">Health</p><p id="ronvald-level">Level</p></div>`;
+        ronvaldHealthElem.innerHTML = `<span>Health: ${heroes[3].health}</span>`;
+        ronvaldLevelElem.innerHTML = `<span>Level: ${heroes[3].level}</span>`
+    }
 
     bossDead()
     checkHero()
@@ -121,4 +137,25 @@ function checkHero() {
             heroes[i].active = 'false';
         }
     }
+}
+
+function getFriend() {
+    if (gold > 100) {
+        heroes[3].active = 'true'
+        gold -= 100
+        drawGame()
+    } else {
+        window.alert('You are too poor!')
+    }
+}
+
+function getBetterFriend() {
+    if (gold > 200) {
+        heroes[4].active = 'true'
+        gold -= 200
+        drawGame()
+    } else {
+        window.alert('You are too poor!')
+    }
+
 }
