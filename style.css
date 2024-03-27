@@ -1,10 +1,5 @@
 body {
-    font-family: Retro Gaming;
+    font-family: "Press Start 2P", sans-serif;
     background-image: url("https://images.unsplash.com/photo-1433733071959-30cd185d14a8?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
-}
-
-@font-face {
-    font-family: Retro Gaming;
-    src: url("/Assets/Retro\ Gaming.ttf");
 }
